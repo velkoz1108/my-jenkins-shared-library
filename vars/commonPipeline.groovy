@@ -3,7 +3,7 @@ def call(Map config = [:]) {
         agent any
 
         environment {
-            PROJECT_NAME = config.projectName ?: 'spring-boot-app'
+            PROJECT_NAME = config.projectName ? config.projectName : 'spring-boot-app'
             DOCKER_IMAGE = "${env.PROJECT_NAME}:${env.BUILD_NUMBER}"
         }
 
