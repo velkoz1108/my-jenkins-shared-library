@@ -3,7 +3,7 @@ def call(Map config = [:]) {
         agent any
 
         environment {
-            PROJECT_NAME = config.projectName
+            PROJECT_NAME = "${config.projectName}"
             DOCKER_IMAGE = "${env.PROJECT_NAME}:${env.BUILD_NUMBER}"
         }
 
